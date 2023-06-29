@@ -22,8 +22,8 @@ export async function providePlugins(app: INestApplication) {
   app.enableCors();
   // swagger文档支持
   provideSwaggerPlugin(app, {
-    title: 'Compass service',
-    description: 'A Nestjs backend service.',
+    title: '新物集开发接口文档',
+    description: '',
   });
   // 全局参数校验
   app.useGlobalPipes(

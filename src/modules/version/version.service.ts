@@ -5,7 +5,7 @@ import { PrismaService } from '@/prisma/prisma.service';
 
 @Injectable()
 export class VersionService {
-  constructor(private readonly PrismaService: PrismaService) {}
+  constructor(private readonly PrismaService: PrismaService) { }
   create(createVersionDto: CreateVersionDto) {
     let { startTime, testTime, completeTime } = createVersionDto;
     startTime = startTime !== undefined ? new Date(startTime) : null;
@@ -23,7 +23,11 @@ export class VersionService {
   }
 
   findAll() {
-    return this.PrismaService.version.findMany();
+    return this.PrismaService.version.findMany({
+      orderBy: {
+        id: 'desc'
+      }
+    });
   }
 
   findOne(id: number) {

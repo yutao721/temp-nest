@@ -58,7 +58,7 @@ model Version {
 model Issue {
   id           Int       @id @default(autoincrement())
   content      String?
-  status       Int?      @default(0)
+  status       Int?      @default(0) // 0 未解决 1 已解决 2 被否决
   questionType Int?      @default(0)
   platformType Int?      @default(0)
   type         Int?      @default(0)

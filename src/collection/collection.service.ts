@@ -5,7 +5,7 @@ import { PrismaService } from './../prisma/prisma.service';
 
 @Injectable()
 export class CollectionService {
-  constructor(private readonly PrismaService: PrismaService) {}
+  constructor(private readonly PrismaService: PrismaService) { }
 
   create(createCollectionDto: CreateCollectionDto) {
     return this.PrismaService.collection.create({
@@ -21,8 +21,8 @@ export class CollectionService {
       where: {
         type: type
           ? {
-              equals: type,
-            }
+            equals: type,
+          }
           : undefined,
       },
     });
